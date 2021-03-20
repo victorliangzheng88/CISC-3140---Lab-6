@@ -1,0 +1,153 @@
+Script started on Fri 19 Mar 2021 09:12:02 PM EDT
+[vlzheng@websol00 ~]$ ls
+CISC-3140---Lab-5  Documents  Music     Public       session.log  Videos
+Desktop            Downloads  Pictures  public_html  Templates
+[vlzheng@websol00 ~]$ mkdir Repo1
+[vlzheng@websol00 ~]$ ls
+CISC-3140---Lab-5  Documents  Music     Public       Repo1        Templates
+Desktop            Downloads  Pictures  public_html  session.log  Videos
+[vlzheng@websol00 ~]$ cd Repo1
+[vlzheng@websol00 Repo1]$ echo "# Repo1" >> README.md
+[vlzheng@websol00 Repo1]$ git init
+Initialized empty Git repository in /users1/st/vlzheng/Repo1/.git/
+[vlzheng@websol00 Repo1]$ git add README.md
+[vlzheng@websol00 Repo1]$ git commit -m "first commit"
+[master (root-commit) 4858a56] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+[vlzheng@websol00 Repo1]$ git branch -M main
+[vlzheng@websol00 Repo1]$ git remote add origin https://github.com/victorliangzheng88/Repo1.git
+[vlzheng@websol00 Repo1]$ git push -u origin main
+Username for 'https://github.com': victorliangzheng88
+Password for 'https://victorliangzheng88@github.com':
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 221 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/victorliangzheng88/Repo1.git
+ * [new branch]      main -> main
+Branch main set up to track remote branch main from origin.
+[vlzheng@websol00 Repo1]$ nano HelloWorld.java
+[vlzheng@websol00 Repo1]$ ls
+HelloWorld.java  README.md
+[vlzheng@websol00 Repo1]$ git add HelloWorld.java
+[vlzheng@websol00 Repo1]$ git commit -m "Java Program print Hello World!"
+bash: !": event not found
+[vlzheng@websol00 Repo1]$ git commit -m "Java Program print Hello World"
+[main cdabcf4] Java Program print Hello World
+ 1 file changed, 6 insertions(+)
+ create mode 100644 HelloWorld.java
+[vlzheng@websol00 Repo1]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': victorliangzheng88
+Password for 'https://victorliangzheng88@github.com':
+Counting objects: 4, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 397 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/victorliangzheng88/Repo1.git
+   4858a56..cdabcf4  main -> main
+[vlzheng@websol00 Repo1]$ nano HelloWorld.java
+[vlzheng@websol00 Repo1]$ git commit -m "Added to print today's date"
+# On branch main
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#       modified:   HelloWorld.java
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+[vlzheng@websol00 Repo1]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': victorliangzheng88
+Password for 'https://victorliangzheng88@github.com':
+Everything up-to-date
+[vlzheng@websol00 Repo1]$ nano HelloWorld.java
+[vlzheng@websol00 Repo1]$ git add HelloWorld.java
+[vlzheng@websol00 Repo1]$ git commit -m "Added to print today's date"
+[main 2d68262] Added to print today's date
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+[vlzheng@websol00 Repo1]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': victorliangzheng88
+Password for 'https://victorliangzheng88@github.com':
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 424 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/victorliangzheng88/Repo1.git
+   cdabcf4..2d68262  main -> main
+[vlzheng@websol00 Repo1]$ nano HelloWorld.java
+[vlzheng@websol00 Repo1]$ git add HelloWorld.java
+[vlzheng@websol00 Repo1]$ git commit -m "Fixed typo"
+[main e4fc675] Fixed typo
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[vlzheng@websol00 Repo1]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': victorliangzheng88
+Password for 'https://victorliangzheng88@github.com':
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 311 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/victorliangzheng88/Repo1.git
+   2d68262..e4fc675  main -> main
+[vlzheng@websol00 Repo1]$ exit
+exit
+
+Script done on Fri 19 Mar 2021 09:24:46 PM EDT
