@@ -1,0 +1,132 @@
+Script started on Sun 21 Mar 2021 09:03:33 PM EDT
+[vlzheng@websol00 ~]$ ls
+CISC-3140---Lab-5  Downloads  Public       session.log     Videos
+Desktop            Music      public_html  svnsession.log
+Documents          Pictures   Repo1        Templates
+[vlzheng@websol00 ~]$ mkdir SVN
+[vlzheng@websol00 ~]$ ls
+CISC-3140---Lab-5  Downloads  Public       session.log     Templates
+Desktop            Music      public_html  SVN             Videos
+Documents          Pictures   Repo1        svnsession.log
+[vlzheng@websol00 ~]$ cd SVN
+[vlzheng@websol00 SVN]$ mkdir Branches
+[vlzheng@websol00 SVN]$ mkdir Tags
+[vlzheng@websol00 SVN]$ mkdir Code
+[vlzheng@websol00 SVN]$ ;s
+bash: syntax error near unexpected token `;'
+[vlzheng@websol00 SVN]$ ls
+Branches  Code  Tags
+[vlzheng@websol00 SVN]$ cd Code
+[vlzheng@websol00 Code]$ nano HelloWorld.java
+[vlzheng@websol00 Code]$ cat HelloWorld.java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World");
+    }
+
+}
+
+[vlzheng@websol00 Code]$ cd ..
+[vlzheng@websol00 SVN]$ cd ..
+[vlzheng@websol00 ~]$ mkdir SVNRepo
+[vlzheng@websol00 ~]$ ls
+CISC-3140---Lab-5  Downloads  Public       session.log  svnsession.log
+Desktop            Music      public_html  SVN          Templates
+Documents          Pictures   Repo1        SVNRepo      Videos
+[vlzheng@websol00 ~]$ cd SVNRepo
+[vlzheng@websol00 SVNRepo]$ ls
+[vlzheng@websol00 SVNRepo]$ svnadmin create repo
+[vlzheng@websol00 SVNRepo]$ ls
+repo
+[vlzheng@websol00 SVNRepo]$ cd ..
+[vlzheng@websol00 ~]$ ls
+CISC-3140---Lab-5  Downloads  Public       session.log  svnsession.log
+Desktop            Music      public_html  SVN          Templates
+Documents          Pictures   Repo1        SVNRepo      Videos
+[vlzheng@websol00 ~]$ cd SVN
+[vlzheng@websol00 SVN]$ ls
+Branches  Code  Tags
+[vlzheng@websol00 SVN]$ cd Code
+[vlzheng@websol00 Code]$ ls
+HelloWorld.java
+[vlzheng@websol00 Code]$ pwd
+/users1/st/vlzheng/SVN/Code
+[vlzheng@websol00 Code]$ cd .
+[vlzheng@websol00 Code]$ cd ..
+[vlzheng@websol00 SVN]$ cd ..
+[vlzheng@websol00 ~]$ ls
+CISC-3140---Lab-5  Downloads  Public       session.log  svnsession.log
+Desktop            Music      public_html  SVN          Templates
+Documents          Pictures   Repo1        SVNRepo      Videos
+[vlzheng@websol00 ~]$ cd SVNRepo
+[vlzheng@websol00 SVNRepo]$ ls
+repo
+[vlzheng@websol00 SVNRepo]$ cd ..
+[vlzheng@websol00 ~]$ cd SVN
+[vlzheng@websol00 SVN]$ cd Code
+[vlzheng@websol00 Code]$ ls
+HelloWorld.java
+[vlzheng@websol00 Code]$ svn import -m "Initial Import" . file:////SVNRepo/repo svn: E180001: Unable to connect to a repository at URL 'file:///SVNRepo/repo'
+svn: E180001: Unable to open an ra_local session to URL
+svn: E180001: Unable to open repository 'file:///SVNRepo/repo'
+[vlzheng@websol00 Code]$ svn import -m "Initial Import" . file:/SVNRepo/repo
+svn: E205000: Try 'svn help' for more info
+svn: E205000: Invalid URL 'file:/SVNRepo/repo'
+[vlzheng@websol00 Code]$ svn checkout --depth empty https://riouxsvn.com/repository/?name=cisc3140-repo2
+svn: E175002: Unable to connect to a repository at URL 'https://riouxsvn.com/repository/%3Fname=cisc3140-repo2'
+svn: E175002: The OPTIONS request returned invalid XML in the response: XML parse error at line 1: no element found (https://riouxsvn.com/repository/%3Fname=cisc3140-repo2)
+[vlzheng@websol00 Code]$ svn checkout --depth empty URL 'https://svn.riouxsvn.com/cisc3140-repo2'
+svn: E125002: 'URL' does not appear to be a URL
+[vlzheng@websol00 Code]$ svn checkout https://svn.riouxsvn.com/cisc3140-repo2
+A    cisc3140-repo2/branches
+A    cisc3140-repo2/tags
+A    cisc3140-repo2/trunk
+Checked out revision 1.
+[vlzheng@websol00 Code]$ svn info
+svn: E155007: '/users1/st/vlzheng/SVN/Code' is not a working copy
+[vlzheng@websol00 Code]$ ls
+cisc3140-repo2  HelloWorld.java
+[vlzheng@websol00 Code]$ cd cisc3140-repo2
+[vlzheng@websol00 cisc3140-repo2]$ ls
+branches  tags  trunk
+[vlzheng@websol00 cisc3140-repo2]$ svn up trunk
+Updating 'trunk':
+At revision 1.
+[vlzheng@websol00 cisc3140-repo2]$ svn add HelloWorld.java
+svn: warning: W155010: '/users1/st/vlzheng/SVN/Code/cisc3140-repo2/HelloWorld.java' not found
+svn: E200009: Could not add all targets because some targets don't exist
+svn: E200009: Illegal target for the requested operation
+[vlzheng@websol00 cisc3140-repo2]$ ls
+branches  tags  trunk
+[vlzheng@websol00 cisc3140-repo2]$ nano HelloWorld.java
+[vlzheng@websol00 cisc3140-repo2]$ cat HelloWorld.java
+public class HelloWorld {
+
+    public static void main(String[] args) {
+        // Prints "Hello, World" to the terminal window.
+        System.out.println("Hello, World");
+    }
+
+}
+[vlzheng@websol00 cisc3140-repo2]$ ls
+branches  HelloWorld.java  tags  trunk
+[vlzheng@websol00 cisc3140-repo2]$ svn add HelloWorld.java
+A         HelloWorld.java
+[vlzheng@websol00 cisc3140-repo2]$ svn update
+Updating '.':
+Adding         HelloWorld.java
+Transmitting file data .
+Committed revision 2.
+[vlzheng@websol00 cisc3140-repo2]$ ls
+branches  HelloWorld.java  tags  trunk
+[vlzheng@websol00 cisc3140-repo2]$ cd ..
+[vlzheng@websol00 Code]$ cd ..
+[vlzheng@websol00 SVN]$ cd ..
+[vlzheng@websol00 ~]$ ls
+CISC-3140---Lab-5  Downloads  Public       session.log  svnsession.log
+Desktop            Music      public_html  SVN          Templates
+Documents          Pictures   Repo1        SVNRepo      Videos
+[vlzheng@websol00 ~]$ exit
+exit
+
+Script done on Sun 21 Mar 2021 09:24:51 PM EDT
